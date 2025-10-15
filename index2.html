@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechCore Solutions - Career Opportunities</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: #334155;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>');
+      opacity: 0.5;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .company-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .company-logo {
+      width: 48px;
+      height: 48px;
+      background: #3b82f6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .company-name {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .company-tagline {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    .job-info {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-details {
+      display: flex;
+      gap: 2rem;
+      color: #cbd5e1;
+      font-size: 0.875rem;
+    }
+
+    .job-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: -2rem auto 2rem;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+
+    .form-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .progress-section {
+      padding: 1.5rem 2rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .progress-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .progress-container {
+      background: #e2e8f0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 4px;
+    }
+
+    .form-content {
+      padding: 2rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .required {
+      color: #ef4444;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      background: white;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .form-input:invalid {
+      border-color: #ef4444;
+    }
+
+    .form-input:invalid:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .file-upload-section {
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      position: relative;
+      background: #fafafa;
+    }
+
+    .file-upload-section:hover {
+      border-color: #3b82f6;
+      background: #f0f9ff;
+    }
+
+    .file-upload-section.dragover {
+      border-color: #3b82f6;
+      background: #eff6ff;
+      transform: scale(1.02);
+    }
+
+    .file-input {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .upload-content {
+      pointer-events: none;
+    }
+
+    .upload-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      background: #e5e7eb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .upload-text {
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+
+    .upload-subtext {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .file-selected {
+      display: none;
+      color: #059669;
+      font-weight: 500;
+    }
+
+    .file-selected-icon {
+      display: inline-block;
+      margin-right: 0.5rem;
+      color: #10b981;
+    }
+
+    .textarea {
+      min-height: 120px;
+      resize: vertical;
+      font-family: inherit;
+      line-height: 1.5;
+    }
+
+    .form-actions {
+      padding: 1.5rem 2rem;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      background: #2563eb;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .processing-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .processing-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e5e7eb;
+      border-top: 3px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1.5rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .processing-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .processing-text {
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .success-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .success-message {
+      color: #64748b;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .success-details {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .success-details h4 {
+      color: #166534;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-details ul {
+      color: #15803d;
+      font-size: 0.875rem;
+      margin-left: 1rem;
+    }
+
+    .prank-reveal {
+      display: none;
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      color: #92400e;
+      font-size: 0.875rem;
+    }
+
+    .redirect-notice {
+      display: none;
+      margin-top: 1rem;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        margin: -1rem auto 1rem;
+        padding: 0 1rem;
+      }
+      
+      .form-content {
+        padding: 1.5rem;
+      }
+      
+      .form-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .form-actions {
+        padding: 1rem 1.5rem;
+      }
+      
+      .progress-section {
+        padding: 1rem 1.5rem;
+      }
+      
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+      
+      .job-details {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .company-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content {
+        padding: 0 1rem;
+      }
+      
+      .job-info {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="company-info">
+        <div class="company-logo">TC</div>
+        <div>
+          <h1 class="company-name">TechCore Solutions</h1>
+          <p class="company-tagline">Leading Technology Innovation</p>
+        </div>
+      </div>
+      
+      <div class="job-info">
+        <h2 class="job-title">Java Developer/Software Testing</h2>
+        <div class="job-details">
+          <div class="job-detail">
+            <span>📍</span>
+            <span>Remote / Coimbatore,TamilNadu</span>
+          </div>
+          <div class="job-detail">
+            <span>💼</span>
+            <span>Full-time</span>
+          </div>
+          <div class="job-detail">
+            <span>💰</span>
+            <span>5LPA - 6LPA</span>
+          </div>
+          <div class="job-detail">
+            <span>⏰</span>
+            <span>Posted 1 day ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h2 class="form-title">Apply for this Position</h2>
+        <p class="form-subtitle">Join our team of innovative developers building next-generation solutions</p>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-label">Application Progress</div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div id="formSection">
+        <div class="form-content">
+          <form id="jobForm">
+            <div class="form-grid">
+              <div class="two-column">
+                <div class="form-group">
+                  <label class="form-label">First Name <span class="required">*</span></label>
+                  <input type="text" class="form-input" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name <span class="required">*</span></label>
+                  <input type="text" class="form-input" required placeholder="Doe" />
+                </div>
+              </div>
+
+              <div class="two-column">
+                <div class="form-group">
+                  <label class="form-label">Email Address <span class="required">*</span></label>
+                  <input type="email" class="form-input" required placeholder="john.doe@email.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number <span class="required">*</span></label>
+                  <input type="tel" class="form-input" required placeholder="+1 (555) 123-4567" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">LinkedIn Profile</label>
+                <input type="url" class="form-input" placeholder="https://linkedin.com/in/johndoe" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Resume <span class="required">*</span></label>
+                <div class="file-upload-section" id="fileUploadArea">
+                  <input type="file" class="file-input" accept=".pdf,.doc,.docx" required id="resumeFile" />
+                  <div class="upload-content" id="uploadContent">
+                    <div class="upload-icon">📄</div>
+                    <div class="upload-text">Drop your resume here or click to browse</div>
+                    <div class="upload-subtext">PDF, DOC, or DOCX • Maximum 10MB</div>
+                  </div>
+                  <div class="file-selected" id="fileSelected">
+                    <span class="file-selected-icon">✓</span>
+                    Resume uploaded successfully
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Years of Experience <span class="required">*</span></label>
+                <select class="form-input" required>
+                  <option value="">Select experience level</option>
+                  <option value="0-1">0-1 years</option>
+                  <option value="2-3">2-3 years</option>
+                  <option value="4-5">4-5 years</option>
+                  <option value="6-8">6-8 years</option>
+                  <option value="9+">9+ years</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Cover Letter <span class="required">*</span></label>
+                <textarea class="form-input textarea" required placeholder="Tell us why you're interested in this role and what makes you a great fit for our team..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Portfolio/GitHub URL</label>
+                <input type="url" class="form-input" placeholder="https://github.com/johndoe or https://portfolio.com" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-btn" id="submitBtn" form="jobForm">
+            <span>Submit Application</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="processing-state" id="processingState">
+        <div class="processing-spinner"></div>
+        <h3 class="processing-title">Processing Your Application</h3>
+        <p class="processing-text">We're reviewing your credentials and matching them with our requirements...</p>
+      </div>
+
+      <div class="success-state" id="successState">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">Application Submitted Successfully!</h2>
+        <p class="success-message">Thank you for your interest in joining TechCore Solutions. We've received your application and our hiring team will review it shortly.</p>
+        
+        <div class="success-details">
+          <h4>What happens next?</h4>
+          <ul>
+            <li>Initial review within 2-3 business days</li>
+            <li>Technical screening call if qualified</li>
+            <li>On-site or virtual interview process</li>
+            <li>Final decision within 1-2 weeks</li>
+          </ul>
+        </div>
+        
+        <div class="prank-reveal" id="prankReveal">
+          <strong></strong> Wait will redirect to the page for SCREENING        </div>
+        
+        <div class="redirect-notice" id="redirectNotice">
+          Redirecting you to a special surprise in <span id="countdown">10</span> seconds...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Form elements
+    const form = document.getElementById('jobForm');
+    const formSection = document.getElementById('formSection');
+    const processingState = document.getElementById('processingState');
+    const successState = document.getElementById('successState');
+    const prankReveal = document.getElementById('prankReveal');
+    const redirectNotice = document.getElementById('redirectNotice');
+    const progressBar = document.getElementById('progressBar');
+    
+    // File upload elements
+    const fileUploadArea = document.getElementById('fileUploadArea');
+    const fileInput = document.getElementById('resumeFile');
+    const uploadContent = document.getElementById('uploadContent');
+    const fileSelected = document.getElementById('fileSelected');
+
+    // Form inputs for progress tracking
+    const formInputs = document.querySelectorAll('.form-input');
+
+    // File upload functionality
+    fileUploadArea.addEventListener('click', () => fileInput.click());
+    
+    fileUploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileUploadArea.classList.add('dragover');
+    });
+    
+    fileUploadArea.addEventListener('dragleave', () => {
+      fileUploadArea.classList.remove('dragover');
+    });
+    
+    fileUploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileUploadArea.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        const file = files[0];
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        if (allowedTypes.includes(file.type)) {
+          fileInput.files = files;
+          handleFileSelect();
+        }
+      }
+    });
+
+    fileInput.addEventListener('change', handleFileSelect);
+
+    function handleFileSelect() {
+      const file = fileInput.files[0];
+      if (file) {
+        uploadContent.style.display = 'none';
+        fileSelected.style.display = 'block';
+        fileUploadArea.style.borderColor = '#10b981';
+        fileUploadArea.style.background = '#f0fdf4';
+        updateProgress();
+      }
+    }
+
+    // Progress tracking
+    formInputs.forEach(input => {
+      input.addEventListener('input', updateProgress);
+      input.addEventListener('change', updateProgress);
+    });
+
+    function updateProgress() {
+      let filledCount = 0;
+      const requiredInputs = document.querySelectorAll('.form-input[required]');
+      
+      requiredInputs.forEach(input => {
+        if (input.type === 'file') {
+          if (input.files && input.files.length > 0) filledCount++;
+        } else if (input.type === 'select-one') { // For dropdowns
+            if (input.value !== '') filledCount++;
+        }
+        else {
+          if (input.value.trim() !== '') filledCount++;
+        }
+      });
+
+      const totalRequired = requiredInputs.length;
+      const progressPercentage = totalRequired > 0 ? (filledCount / totalRequired) * 100 : 0;
+      progressBar.style.width = `${progressPercentage}%`;
+    }
+
+    // Form submission handling
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Validate form before submitting (optional, but good practice)
+      if (!form.checkValidity()) {
+          alert('Please fill out all required fields correctly.');
+          return;
+      }
+
+      // Hide form, show processing state
+      formSection.classList.add('hidden');
+      processingState.style.display = 'block';
+
+      // Simulate processing time
+      setTimeout(() => {
+        processingState.style.display = 'none';
+        successState.style.display = 'block';
+        prankReveal.style.display = 'block'; // Show the prank reveal
+
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        redirectNotice.style.display = 'block'; // Show redirect notice
+
+        const countdownInterval = setInterval(() => {
+          countdown--;
+          if (countdownElement) {
+            countdownElement.textContent = countdown;
+          }
+
+          if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            // Redirect to the prank URL (Rick Astley - Never Gonna Give You Up)
+            window.location.href = 'https://youtube.com/shorts/QU-K9d-IV9I?feature=shared'; 
+          }
+        }, 500);
+
+      }, 500); // Simulate 3 seconds of processing
+    });
+  </script>
+</body>
+</html>

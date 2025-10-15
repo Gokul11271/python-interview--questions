@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechCore Careers - Application Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #112D4E;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      margin-top: 20px;
+      background: #3F72AF;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #2c5a99;
+    }
+
+    #confirmation {
+      margin-top: 30px;
+      background: #d4edda;
+      color: #155724;
+      padding: 20px;
+      border: 2px solid #c3e6cb;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3F72AF;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TechCore Solutions - Career Portal</h1>
+    <p>Apply for the Full Stack Developer Position</p>
+    <form id="jobForm">
+      <label>Full Name:</label>
+      <input type="text" required />
+      <label>Email Address:</label>
+      <input type="email" required />
+      <label>Upload Resume (PDF only):</label>
+      <input type="file" accept=".pdf" required />
+      <label>Why should we hire you?</label>
+      <textarea required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+    <div id="processing" class="hidden">
+      <p>Processing your application... Please wait.</p>
+      <div class="loader"></div>
+    </div>
+    <div id="confirmation" class="hidden">
+      <canvas class="confetti" id="confetti"></canvas>
+      <h2>🎉 Congratulations!</h2>
+      <p>You’ve been <b>selected</b> for the role. Our HR will contact you shortly.</p>
+      <p id="prankMessage" style="font-size: 14px; color: #888; display: none;">(Just kidding 😄 - You’ve been pranked!)</p>
+    </div>
+  </div>
+
+  <audio id="laughSound" src="https://www.myinstants.com/media/sounds/troll-song.mp3"></audio>
+
+  <script>
+    const form = document.getElementById("jobForm");
+    const confirmation = document.getElementById("confirmation");
+    const processing = document.getElementById("processing");
+    const prankMessage = document.getElementById("prankMessage");
+    const laughSound = document.getElementById("laughSound");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      form.classList.add("hidden");
+      processing.classList.remove("hidden");
+
+      setTimeout(() => {
+        processing.classList.add("hidden");
+        confirmation.classList.remove("hidden");
+        launchConfetti();
+        laughSound.play();
+
+        // Reveal the prank after 4 seconds
+        setTimeout(() => {
+          prankMessage.style.display = "block";
+        }, 4000);
+
+        // Optional: redirect to funny meme after 10 sec
+        setTimeout(() => {
+          window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }, 10000);
+      }, 3000);
+    });
+
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      const pieces = [];
+
+      for (let i = 0; i < 100; i++) {
+        pieces.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          radius: Math.random() * 6 + 4,
+          color: `hsl(${Math.random() * 360}, 100%, 60%)`,
+          velocity: Math.random() * 3 + 2
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of pieces) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+        }
+      }
+
+      function update() {
+        for (let p of pieces) {
+          p.y += p.velocity;
+          if (p.y > canvas.height) p.y = -10;
+        }
+      }
+
+      function animate() {
+        draw();
+        update();
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+  </script>
+</body>
+</html>
