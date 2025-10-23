@@ -3,14 +3,14 @@
 #  position if found.
 
 
-# list=[1,2,3,4,5,6,7,8,9,10]
-# target=3
+list=[1,2,3,4,5,6,7,8,9,10]
+target=3
 
-# for i in range(len(list)):
-#     if list[i]==target:
+for i in range(len(list)):
+    if list[i]==target:
         
-#        print("target value",list[i])
-#        print("index",i+1)
+       print("target value",list[i])
+       print("index",i+1)
 
 
 # kish =[1,2,3,4,5,6,]
