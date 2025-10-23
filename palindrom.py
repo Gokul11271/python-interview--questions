@@ -9,12 +9,12 @@ else:
     print("Not Palindrome")
     
 
-# st = input("Enter a string: ")
-# strrev = st[::-1]
+st = input("Enter a string: ")
+strrev = st[::-1]
 
-# print("Reversed:", strrev)
+print("Reversed:", strrev)
 
-# if st == strrev:
-#     print("Palindrome")
-# else:
-#     print("Not Palindrome")
+if st == strrev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
