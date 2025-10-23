@@ -5,18 +5,18 @@ else:
     print("it is a number")
         #'a'<=i<='z' or 'A'<=i<='Z' or '0'<=i<='9'
 
-#a = input()
+a = input()
 
-# try:
-#     int(a)
-#     print("it is an integer")
-# except ValueError:
-#     try:
-#         float(a)
-#         print("it is a float")
-#     except ValueError:
-#         try:
-#             complex(a)
-#             print("it is a complex number")
-#         except ValueError:
-#             print("it is not a number")
+try:
+    int(a)
+    print("it is an integer")
+except ValueError:
+    try:
+        float(a)
+        print("it is a float")
+    except ValueError:
+        try:
+            complex(a)
+            print("it is a complex number")
+        except ValueError:
+            print("it is not a number")
