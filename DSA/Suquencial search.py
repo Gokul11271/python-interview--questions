@@ -3,3 +3,4 @@ target=96
 for i in a:
     if i==target:
      print(i,end=" ")
+    
