@@ -6,3 +6,4 @@ for i in range(len(arr)):  # i = index (0..9)
     if arr[i] == target:
         print("value of the target:", arr[i])
         print("index of the array:", i)
+fdv
