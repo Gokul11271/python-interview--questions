@@ -12,3 +12,4 @@ if 0 <= i < len(arr):
     print(arr[i])
 else:
     print("index out of range")
+
