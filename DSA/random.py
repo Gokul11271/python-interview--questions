@@ -6,12 +6,7 @@
 #     if arr[i] == target:
 #         print("value of the target:", arr[i])
 #         print("index of the array:", i)
-arr = [10,20,30,40,50,60,70,80,90,100]
-target=30
-for i in range(len(arr)):
-    for j in range(i+1,len(arr)):
-        if i+j==target:
-            print(arr[i],arr[j])
+c
             
 
 
