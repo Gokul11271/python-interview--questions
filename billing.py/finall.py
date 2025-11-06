@@ -10,60 +10,66 @@ os.makedirs(output_folder, exist_ok=True)
 # === Ranges and constants ===
 RANGE_40MM = (1439, 1445)
 RANGE_M_SA = (523, 530)
-RANGE_CEM2 = (3671, 3674)
+RANGE_CEM2 = (367, 374)
 RANGE_WATER = (133, 140)
 ADMIX1_VALUE = 1.40
 
 # === Columns ===
-columns = ["40MM", "M SA", "CEM2", "WATER", "ADMIX1"]
+columns = ["40MM ","0","12MM","20MM","0","M SA","CEM1", "CEM2","CEM3","0", "WATER","0", "ADMIX1","0.00"]
+columns = ["Targets based on batchsize in"]
 
-def create_bill(filename):
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Bill Report"
+# === Create workbook ===
+wb = Workbook()
+ws = wb.active
+ws.title = "Bill Report"
 
-    # === Header Section ===
+current_row = 1
+
+# === Generate 230 sets ===
+for set_num in range(1, 231):  # 230 sets
+    ws.append([f"Set {set_num}"])
     ws.append(columns)
-    ws.append([])
 
-    # === Data rows ===
     data_rows = []
-    for _ in range(10):  # 10 data rows
+    for _ in range(10):  # 10 data rows per set
         row = [
-            random.randint(*RANGE_40MM),  # 40MM
-            random.randint(*RANGE_M_SA),  # M SA
-            random.randint(*RANGE_CEM2),  # CEM2
-            random.randint(*RANGE_WATER),  # WATER
-            ADMIX1_VALUE,                 # ADMIX1
-        ]
+            random.randint(*RANGE_40MM),
+            0,
+            random.randint(*RANGE_M_SA),
+            0,
+            0,
+            0,
+            0,
+            random.randint(*RANGE_CEM2),
+            0,
+            0,
+            random.randint(*RANGE_WATER),
+            0,
+            ADMIX1_VALUE,
+            0.00,
+        ]  
         ws.append(row)
         data_rows.append(row)
 
-    # === Add Total Row ===
+    # === Total Row ===
     total_row = ["Total"]
-    # Sum each numeric column
     for col_idx in range(1, len(columns)):
         col_values = [r[col_idx] for r in data_rows if isinstance(r[col_idx], (int, float))]
         total_sum = sum(col_values)
         total_row.append(round(total_sum, 2))
 
-    # Add the total row
     ws.append([])
     ws.append(total_row)
+    ws.append([])  # Blank line between sets
 
-    # === Adjust column widths ===
-    for col in ws.columns:
-        max_length = max(len(str(cell.value)) if cell.value else 0 for cell in col)
-        ws.column_dimensions[col[0].column_letter].width = max_length + 3
+# === Adjust column widths ===
+for col in ws.columns:
+    max_length = max(len(str(cell.value)) if cell.value else 0 for cell in col)
+    ws.column_dimensions[col[0].column_letter].width = max_length + 3
 
-    wb.save(filename)
-    wb.close()
+# === Save file ===
+filename = os.path.join(output_folder, "All_Bills_230_Sets.xlsx")
+wb.save(filename)
+wb.close()
 
-
-# === Generate 2 Excel sheets ===
-for i in range(1, 3):
-    filename = os.path.join(output_folder, f"Bill_{i:02}.xlsx")
-    create_bill(filename)
-    print(f"✅ Generated: {filename}")
-
-print("\n🎯 Successfully created 2 Excel bills with correct total row (ADMIX1 = 14.00).")
+print(f"✅ Successfully created single Excel file with 230 sets at:\n{filename}")
