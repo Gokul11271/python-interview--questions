@@ -14,9 +14,39 @@
 #      print("j:                 ",Input[j])
 #      if Input[i]+Input[j]==  target :
 #          print("oppppp",[Input[i],Input[j]])
-arr1 = [10,20,30,40,50,60,70,80,90,100]
-target=30
-for i in range(len(arr1)):
-    for j in range(i+1,len(arr1)):
+
+
+# arr1 = [10,20,30,40,50,60,70,80,90,100]
+# target=30
+# for i in range(len(arr1)):
+#     for j in range(i+1,len(arr1)):
+#         if i+j==target:
+#             print(arr1[i],arr1[j])
+
+
+
+
+
+a=[1,2,3,4,5,6,7,8,9]
+target=10
+for i in a:
+    for j in a:
         if i+j==target:
-            print(arr1[i],arr1[j])
+            print([i,j ],end=" ")
+print( )
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i] + a[j] ==target:
+            print([a[i],a[j]],end=" ")
+
+print()
+print(a)
+
+# l=[10,2,33,44,55,654,100]
+# target=110
+# for i in range(len(l)):
+#     # print(l[i])
+#   for j in l:
+#         # print("*",j)
+#     if l[i]+j ==target:
+#       print(l[i],j)
