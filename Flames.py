@@ -5,7 +5,7 @@ while True:
     a=input("Enter a boy name to check :")
     b=input("Enter a girl name to check :")
     bf,gf=a,b
-    d={1:'Friend',2:'Love',3:'Affection',4:'Marriage',5:'Enemy',6:'Sister'}
+    d={1:'Friend',2:'Love 💘',3:'Affection',4:'Marriage',5:'Enemy',6:'Sister'}
     for i in range(len(a)):
         for j in range(len(b)):
             if a[i].lower()==b[j].lower():
