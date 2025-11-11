@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — Gokul</title>
+
+  <!-- Google Fonts (will load if online) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6f5f3;
+      --card:#ffffff;
+      --accent:#7c1f2a; /* deep maroon-ish accent */
+      --muted:#6b6b6b;
+      --glass: rgba(255,255,255,0.6);
+      --radius:18px;
+      --shadow: 0 8px 30px rgba(35,35,35,0.08);
+      --glass-shadow: 0 6px 20px rgba(124,31,42,0.06);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(124,31,42,0.06), transparent 8%),
+        radial-gradient(900px 400px at 95% 80%, rgba(124,31,42,0.035), transparent 8%),
+        var(--bg);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+
+    .container{
+      width:100%;
+      max-width:960px;
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Card left: Profile snapshot */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.98));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .avatar-wrap{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .avatar{
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      overflow:hidden;
+      border:4px solid var(--glass);
+      box-shadow:var(--glass-shadow);
+      flex-shrink:0;
+      background:linear-gradient(135deg,#fff,#f3ecec);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:var(--accent);
+      font-size:28px;
+    }
+    .name{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .name h1{
+      margin:0;
+      font-family:"Playfair Display",serif;
+      font-size:20px;
+      letter-spacing:0.2px;
+      color:var(--accent);
+    }
+    .name p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .meta-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .meta{
+      background:rgba(124,31,42,0.04);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:600;
+      color:var(--accent);
+      font-size:13px;
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-block;
+      margin-top:14px;
+      padding:8px 12px;
+      background:linear-gradient(90deg, rgba(124,31,42,0.08), rgba(124,31,42,0.04));
+      border-radius:12px;
+      color:var(--accent);
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .section{
+      margin-top:18px;
+    }
+    .section h3{
+      margin:0 0 8px 0;
+      font-size:14px;
+      color:#222;
+    }
+    .info-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .info-list li{
+      background:#fff;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(16,16,16,0.03);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:14px;
+      color:#333;
+    }
+    .muted{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Right column: Detailed card */
+    .detail{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      min-height:260px;
+    }
+
+    .tag-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .tag{
+      padding:8px 12px;
+      background:linear-gradient(90deg, rgba(124,31,42,0.08), rgba(124,31,42,0.03));
+      color:var(--accent);
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .title h2{
+      margin:0;
+      font-size:20px;
+      color:#111;
+    }
+    .salary{
+      text-align:right;
+    }
+    .salary small{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .salary strong{
+      color:var(--accent);
+      font-size:18px;
+    }
+
+    .bio{
+      margin-top:14px;
+      line-height:1.5;
+      color:#222;
+      font-size:15px;
+    }
+
+    .hobby-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+    .hobby{
+      background:linear-gradient(180deg,#fff, #fafafa);
+      border-radius:12px;
+      padding:10px 12px;
+      border:1px solid rgba(16,16,16,0.03);
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-weight:600;
+      color:#333;
+      font-size:13px;
+    }
+
+    .attributes{
+      display:flex;
+      gap:10px;
+      margin-top:16px;
+      align-items:center;
+    }
+    .attr{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(16,16,16,0.03);
+      font-weight:700;
+      color:#222;
+      font-size:13px;
+    }
+
+    /* footer small */
+    .footer{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; padding:8px}
+      .card{order:2}
+      .detail{order:1}
+    }
+
+    /* subtle hover and focus */
+    .card:focus-within, .detail:focus-within { box-shadow: 0 10px 40px rgba(124,31,42,0.08); transform: translateY(-3px); transition:all .25s ease; }
+  </style>
+</head>
+<body>
+
+  <main class="container" aria-labelledby="profile-heading">
+    <!-- Left: snapshot -->
+    <section class="card" aria-label="Snapshot">
+      <div class="avatar-wrap">
+        <div class="avatar" aria-hidden="true">
+          <!-- initials fallback -->
+          GK
+        </div>
+        <div class="name">
+          <h1 id="profile-heading">Gokul (Gokula Kannan)</h1>
+          <p>Full name: Gokula kannan • Age: 19</p>
+        </div>
+      </div>
+
+      <div class="meta-grid" role="list" aria-label="Quick facts">
+        <div class="meta" role="listitem">HEIGHT • 6 ft</div>
+        <div class="meta" role="listitem">RASI • Kumbam</div>
+        <div class="meta" role="listitem">NACHATHIRAM • Sathiyam</div>
+        <div class="meta" role="listitem">PUDITHA KADAVUL • Murugar</div>
+      </div>
+
+      <div class="section">
+        <div class="badge">Sontha Ooru: ERODE 💥</div>
+      </div>
+
+      <div class="section">
+        <h3>Contact & Education</h3>
+        <ul class="info-list" aria-label="education and type">
+          <li><span>Study</span><strong class="muted">M.Sc Computer Science (Data Analytics)</strong></li>
+          <li><span>Type</span><strong>Jolly • Friendly • Secret 😁</strong></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Short lines</h3>
+        <p class="muted" style="margin:6px 0 0 0">🖼 Sothuuu: NALA MANASU • ALAGU: Maniram</p>
+      </div>
+    </section>
+
+    <!-- Right: details -->
+    <section class="detail" aria-label="Details">
+      <div class="title">
+        <div>
+          <h2>Profile — Gokul</h2>
+          <div class="tag-row" aria-hidden="true">
+            <span class="tag">Mapala</span>
+            <span class="tag">Full name: Gokula kannan</span>
+            <span class="tag">Rasi: Kumbam</span>
+          </div>
+        </div>
+
+        <div class="salary" aria-hidden="true">
+          <small>Monthly salary (expected)</small>
+          <strong>Depends on project • up to ₹10k–14k</strong>
+        </div>
+      </div>
+
+      <p class="bio">
+        Hello — I'm <strong>Gokul</strong>, a 19-year-old M.Sc Computer Science (specializing in Data Analytics) student.
+        I enjoy a balanced life: exercise, cooking, coding, and music. I love both indoor and outdoor games — always up for a friendly match! 😄
+      </p>
+
+      <div class="hobby-grid" aria-label="Hobbies">
+        <div class="hobby">🏋️ Exercise</div>
+        <div class="hobby">🍳 Cooking</div>
+        <div class="hobby">💻 Coding</div>
+        <div class="hobby">🎵 Music</div>
+        <div class="hobby">🏸 Indoor & Outdoor Games</div>
+      </div>
+
+      <div class="attributes" aria-label="Personal attributes">
+        <div class="attr">Sontha Ooru: Erode</div>
+        <div class="attr">Sothu: NALA MANASU</div>
+        <div class="attr">ALAGU: Maniram</div>
+      </div>
+
+      <div class="footer" role="contentinfo">
+        <div>Type: <strong>Jolly • Friendly</strong></div>
+        <div class="muted">Last updated: Nov 10, 2025</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Optional small JS to set initials from name - replace avatar image if provided -->
+  <script>
+    (function(){
+      const avatar = document.querySelector('.avatar');
+      const name = document.querySelector('#profile-heading').textContent.trim();
+      // set initials if no image provided
+      if(avatar && avatar.innerHTML.trim() === 'GK'){
+        const parts = name.split(' ');
+        let initials = parts.length > 1 ? parts[0][0] + parts[1][0] : name.slice(0,2);
+        avatar.textContent = initials.toUpperCase();
+      }
+    })();
+  </script>
+
+</body>
+</html>
