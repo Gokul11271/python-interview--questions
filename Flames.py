@@ -6,7 +6,7 @@ while True:
     b=input("Enter a girl name to check :")
     bf,gf=a,b
     d={1:'Friend',2:'Love 💘',3:'Affection',4:'Marriage',5:'Enemy',6:'Sister'}
-    for i in range(len(a)):
+    for i in range(len(a)) :
         for j in range(len(b)):
             if a[i].lower()==b[j].lower():
                 a=a.replace(a[i]," ",1)
