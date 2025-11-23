@@ -354,13 +354,9 @@ def run_cycle(vol_gen):
                 if pos.type == mt5.POSITION_TYPE_SELL:
                     # SELL triggered → next is BUY
                     next_side = "BUY"
-
-
                     # BUY integer increases sequentially: base_int + triggered_count
                     buy_int = base_int + triggered_count   # 4001, 4002, ...
                     candidate_price = buy_int + fixed_decimal
-                    
-
                     # ensure bro  ker limits for BUY
                     tickc = mt5.symbol_info_tick(SYMBOL)
                     if not tickc:
