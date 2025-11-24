@@ -6,7 +6,7 @@
 #     if arr[i] == target:
 #         print("value of the target:", arr[i])
 #         print("index of the array:", i)
-c
+
             
 
 
