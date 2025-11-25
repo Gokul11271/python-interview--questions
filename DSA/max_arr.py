@@ -22,3 +22,15 @@ for i in arr:
     if i > maximum:
         maximum = i
 print(maximum)
+
+
+
+#second largest
+arr2=[]
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if arr[i] >=arr[j] :
+            arr2.append(arr[i])
+            print(arr[i])
+print(arr)
+print(arr2)
