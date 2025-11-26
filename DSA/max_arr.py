@@ -35,7 +35,7 @@ arr = [10, 20, 5, 90, 56]
 #             arr2.append(arr[i])
            
 print(arr)
-print(arr2)
+print(arr)
 
 #sortting asscending to decending
 
