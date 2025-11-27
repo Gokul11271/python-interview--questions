@@ -8,3 +8,4 @@ for i in arr:
         print("index of the array",arr[i])
     else:
         print("index of array value",i)
+    print("hello sivanya")
