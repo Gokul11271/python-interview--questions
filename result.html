@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. N.G.P. Arts and Science College - Login</title>
+    <style>
+        /* --- CSS Styles --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5; /* Light background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: #fff;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .college-logo {
+            width: 70px; /* Adjusted size for better fit */
+            height: 70px;
+            margin-right: 15px;
+            /* Placeholder style for the logo */
+            /* You MUST replace 'college_logo.png' in the HTML with your file */
+        }
+
+        .college-info {
+            padding-left: 10px;
+        }
+
+        .college-info h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #0056b3; /* Primary blue color */
+            font-weight: bold;
+        }
+
+        .college-info p {
+            margin: 0;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .header-right {
+            /* This section is primarily for the 'Log in' button in the top right */
+            display: flex;
+            align-items: center;
+        }
+
+        .top-login-button {
+            background-color: #007bff; /* Button blue */
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        /* --- Login Section (Left) --- */
+        .login-section {
+            width: 45%;
+            padding: 0;
+        }
+
+        .login-section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .log-in-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .log-in-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- Announcements Section (Right) --- */
+        .announcements-section {
+            width: 45%;
+            background-color: #007bff; /* Announcement background blue */
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .announcements-section h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+        }
+
+        .announcements-section h4 {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .announcements-section p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #fff;
+            padding: 15px 40px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #777;
+            position: fixed; /* Fix to bottom */
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="college_logo.png" alt="College Logo" class="college-logo">
+            <div class="college-info">
+                <h1>Dr. N.G.P. Arts and Science College</h1>
+                <p>Autonomous | Affiliated to Bharathiar University, Coimbatore.</p>
+                <p>Graded 'A++' by NAAC (Third Cycle)</p>
+                <p>Dr. N.G.P. Nagar, Kalapatti Road, Coimbatore, Tamil Nadu - 641048</p>
+                <p>Contact: 0422 - 2369201 E-mail: <a href="mailto:principal@drngpasc.ac.in" style="color: #007bff;">principal@drngpasc.ac.in</a></p>
+            </div>
+        </div>
+        <div class="header-right">
+            <span style="font-size: 16px; font-weight: bold; color: #555; margin-right: 20px;">CAMPES</span>
+            <button class="top-login-button">Log in</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="login-section">
+            <h2>Log in</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="registerNumber">Register Number</label>
+                    <input type="text" id="registerNumber" name="registerNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="log-in-btn">Log in</button>
+            </form>
+        </div>
+
+        <div class="announcements-section">
+            <h3>Announcements</h3>
+            <h4>Password policy.</h4>
+            <p>Management may change or reset your password anytime if it finds necessary to maintain your accounts secured.</p>
+            <p>You will be notified by an SMS to your registered mobile number with your new initial password.</p>
+            <p>Login to the portal with the initial password and change your password immediately.</p>
+            <p>Do not share your password with anyone.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Copyright © 2025 - Dr. N.G.P. Arts and Science College. All rights reserved.</p>
+            <p>CAMPES® Web Platform, by LogicLaunch Technologies, Coimbatore.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- JavaScript for Login Check ---
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+
+            const registerNumber = document.getElementById('registerNumber').value;
+            const password = document.getElementById('password').value;
+
+            // Specified Credentials
+            const correctRegisterNumber = 'Kaviyasri';
+            const correctPassword = '1/11/2004';
+
+            if (registerNumber === correctRegisterNumber && password === correctPassword) {
+                alert('Login Successful! Welcome, Kaviyasri.');
+                // In a real application, you would redirect here:
+                // window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid Register Number or Password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
