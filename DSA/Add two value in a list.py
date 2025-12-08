@@ -39,6 +39,7 @@ b = [4,5,-10]
 carry=0
 
 
+
 for i in range(len(a) -1,-1,-1):
 #  for j in range(len(b)-1,-1,-1):
   sum=a[i]+b[i]+carry
