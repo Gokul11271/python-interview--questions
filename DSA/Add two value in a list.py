@@ -49,7 +49,7 @@ for i in range(len(a)):
   
 #   print(count,"=",sum)
   
-  if a[:-1:] and sum > 9:
+  if a[-1] and sum > 9:
    carry=sum//10 #13 1
    sum=sum%10 # 3
 #    print(carry,"carry")
