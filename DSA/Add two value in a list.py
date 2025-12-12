@@ -33,13 +33,10 @@
 
 
 
-c = [-1,2,3]
-d = [4,15,-10]
+a = [1,2,3]
+b = [4,15,1]
 
-a=[abs(j) for j in c]
-print(a)
-b=[abs(k) for k in d]
-print(b)
+
 carry=0
 
 for i in range(len(a)):
@@ -49,14 +46,13 @@ for i in range(len(a)):
   
 #   print(count,"=",sum)
   
-  if a[-1] and sum > 9:
+  if  sum > 9:
    carry=sum//10 #13 1
    sum=sum%10 # 3
 #    print(carry,"carry")
    print(sum,end=" ")
 #    print(carry)
-  elif a[-1:-2:-1] and b[-1:-2:-1]:
-   print(sum)
+  
   else:
    print((sum),end=" ")
    carry=0
