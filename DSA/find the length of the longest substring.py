@@ -12,4 +12,5 @@ for i in range(len(s)):
 
          print("i =",s[i],"j =",s[j])
 
+
     break
