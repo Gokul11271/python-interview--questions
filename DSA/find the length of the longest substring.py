@@ -10,6 +10,7 @@ for i in range(len(s)):
     for j in range(len(s)):
         if s[i]==s[j]:
 
+
          print("i =",s[i],"j =",s[j])
 
 
