@@ -5,13 +5,14 @@
 # Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
 
 
-s="abcabcbb"
-for i in range(len(s)):
-    for j in range(len(s)):
-        if s[i]==s[j]:
-
-
-         print("i =",s[i],"j =",s[j])
-
-
-    break
+number ="abcabcbb"
+length= 0
+for i in range(len(number)):
+    for j in range (i+1,len(number)):
+        print(number[i] , number[j])
+        count +=1
+        if number[i] == number[j]:
+         print("repeated",number[i] , number[j])
+         count=0
+         break
+        
