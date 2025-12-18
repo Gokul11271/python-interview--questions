@@ -11,7 +11,6 @@ for i in range(len(number)):
     for j in range (i+1,len(number)):
         print(number[i] , number[j])
         count +=1
-        
         if number[i] == number[j]:
          print("repeated",number[i] , number[j])
          count=0
