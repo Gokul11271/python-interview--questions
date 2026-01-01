@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Ecog Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-green: #363830;
+            --brand-accent: #b4925a; 
+            --brand-blue: #005a9c;   
+            --text-dark: #111111;
+            --text-light: #555555;
+            --border-gray: #347b36;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            mix-blend-mode: difference;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: white;
+        }
+
+        .header-actions i {
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: transform .3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .header-actions i:hover { transform: scale(1.15); }
+
+        .auth-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            margin-left: 14px;
+            mix-blend-mode: difference;
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            width: 0;
+            transition: width 0.4s;
+            padding: 0;
+        }
+
+        .search-wrapper:hover .search-input {
+            width: 100px;
+            padding-left: 10px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://www.vilvahstore.com/cdn/shop/files/3200x1600.webp?v=1692965235&width=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--brand-blue);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            border-left: 2px solid var(--brand-accent);
+            padding-left: 25px;
+            max-width: 550px;
+        }
+
+        .hero-description p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .contact-info { flex: 1; }
+        .contact-info h2 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 600; }
+        .intro-p { font-size: 1.1rem; margin-bottom: 40px; color: var(--text-light); }
+
+        .details-group { margin-bottom: 25px; }
+        .details-group span { 
+            display: block; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; 
+            letter-spacing: 1.5px; 
+            font-weight: 600; 
+            color: var(--border-gray); 
+            margin-bottom: 5px; 
+        }
+
+        /* --- Form Styling --- */
+        .form-container { flex: 1.5; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .full-width { grid-column: span 2; }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .send-btn {
+            background-color: #1a1a1a; 
+            color: #ffffff;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            width: 100%;
+        }
+
+        .send-btn:hover { background-color: #2d5a27; transform: translateY(-2px); }
+
+        /* --- Footer Styles --- */
+        footer {
+            background: #ffffff;
+            color: #334155;
+            font-family: "Inter", sans-serif;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 70px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .footer-brand .logo-wrap img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .footer h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .footer ul { list-style: none; padding: 0; }
+        .footer li { margin-bottom: 10px; }
+
+        .footer a {
+            color: #475569;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .footer a:hover { color: #0f172a; border-bottom-color: #cbd5e1; }
+
+        .footer-social { display: flex; gap: 14px; margin-top: 18px; }
+        .footer-social a {
+            width: 38px; height: 38px; border-radius: 50%;
+            border: 1px solid #e5e7eb; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .footer-social a:hover { background: #f8fafc; color: #098b64; }
+
+        .footer-bottom {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 45px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* --- WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            left: 30px;
+            background-color: #25d366;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        @media (max-width: 992px) {
+            header { padding: 16px 20px; }
+            .main-menu { display: none; }
+            .container { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 520px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="https://ecogproducts.com/wp-content/uploads/2022/10/Logo-1.png" alt="Ecog Logo">
+            </div>
+        </div>
+        <nav class="main-menu center-menu">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">MediaRooms</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="header-actions">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search..." class="search-input">
+            </div>
+            <i class="fa-solid fa-globe"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="auth-links">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Ecog Products</div>
+            <h1>Contact Us</h1>
+            <div class="hero-description">
+                <p>Information and inquiries regarding our organic processes, retail partnerships, and dedicated support.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>Nature is always <br>at your service.</h2>
+            <p class="intro-p">Have a question about our organic processes or your order?</p>
+            <div class="details-group">
+                <span>Order Queries</span>
+                <p><a href="tel:+918778040400">+91 8778040400</a></p>
+            </div>
+            <div class="details-group">
+                <span>Support Us</span>
+                <p><a href="mailto:sales@ecogproducts.com">sales@ecogproducts.com</a></p>
+            </div>
+            <div class="details-group">
+                <span>Headquarters</span>
+                <p>Karattu Medu, Murugan Temple Ezhil nagar, Sathy Rd, Coimbatore, Tamil Nadu 641035</p>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="contactForm">
+                <div class="form-grid">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Mobile Number" required>
+                    <select id="queryType" required>
+                        <option value="" disabled selected>Nature of Query</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="order">Existing Order / Tracking</option>
+                        <option value="partnership">Business Partnership</option>
+                    </select>
+                    <input type="text" id="orderIDField" placeholder="Order ID (e.g., #ECG1234)" class="full-width" style="display: none;">
+                    <textarea class="full-width" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button type="submit" class="send-btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrap">
+                        <img src="https://ecogproducts.com/wp-content/uploads/2022/10/Logo-1.png" alt="EcoG Logo">
+                    </div>
+                    <p>EcoG delivers sustainable products, intelligent solutions, and responsible innovation to build a greener future.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li><a href="#">User Categories</a></li>
+                        <li><a href="#">Material Categories</a></li>
+                        <li><a href="#">Combos</a></li>
+                        <li><a href="#">Bestseller</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Who We Are</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Sales FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 EcoG Products. All rights reserved.</span>
+                <span>Designed by ECOG SOLUTION</span>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918778040400" class="whatsapp-float" target="_blank">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.89 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.743-.981z"/></svg>
+    </a>
+
+    <script>
+        const queryDropdown = document.getElementById('queryType');
+        const orderIDInput = document.getElementById('orderIDField');
+        queryDropdown.addEventListener('change', function() {
+            orderIDInput.style.display = this.value === 'order' ? 'block' : 'none';
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = 'Sending...';
+            setTimeout(() => {
+                alert('Your organic inquiry has been received.');
+                btn.textContent = 'Send Message';
+                this.reset();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
