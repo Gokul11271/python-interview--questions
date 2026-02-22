@@ -6,6 +6,7 @@ print(arr[2])    # 30
 print(arr[-1])   # 40 (last)
 print(len(arr))  # 4
 
+
 # safe access check to avoid IndexError
 i = 5
 if 0 <= i < len(arr):
