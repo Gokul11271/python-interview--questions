@@ -4,6 +4,7 @@ for i in range(len(list)):
     # print(i,list[i])
     for j in range(len(list)):
         
+        
         if list[i]>list[j]:
             print(j," ",list[i],">",list[j])
             
