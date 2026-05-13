@@ -39,9 +39,9 @@ calculate factorial  """
 
 def largest(a,b):
     if a>b :
-        return(b)
-    else:
         return(a)
+    else:
+        return(b)
 result = largest(100 ,500)
 
 print(result)
