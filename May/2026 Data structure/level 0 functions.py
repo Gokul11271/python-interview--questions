@@ -7,22 +7,41 @@
 "                     condition or statement "
 "                     which execture at lest one time "
 
-def sum():
-    t = 10 + 340
-    print(t)
+# def sum():
+#     t = 10 + 340
+#     print(t)
 
-sum()
+# sum()
 
 
-def total(a,b):
-    tt=a+b
-    print(tt)
+# def total(a,b):
+#     tt=a+b
+#     print(tt)
 
-total(10,100)
+# total(10,100)
 
-def square(n):
-    return n * n
+# def square(n):
+#     return n * n
 
-result = square(4)
+# result = square(4)
+
+# print(result)
+
+
+
+"""  Practice 4
+
+Create functions:
+
+find largest of 2 numbers
+check even/odd
+calculate factorial  """
+
+def largest(a,b):
+    if a>b :
+        return(b)
+    else:
+        return(a)
+result = largest(100 ,500)
 
 print(result)
