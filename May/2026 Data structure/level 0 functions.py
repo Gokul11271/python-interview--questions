@@ -45,3 +45,11 @@ def largest(a,b):
 result = largest(100 ,500)
 
 print(result)
+
+def even(e):
+    if e % 2 ==0:
+        return("even numeber")
+    else:
+        return("not even num")
+    
+even(2)
