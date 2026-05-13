@@ -37,24 +37,24 @@ find largest of 2 numbers
 check even/odd
 calculate factorial  """
 
-def largest(a,b):
-    if a>b :
-        return(a)
-    else:
-        return(b)
-result = largest(100 ,500)
+# def largest(a,b):
+#     if a>b :
+#         return(a)
+#     else:
+#         return(b)
+# result = largest(100 ,500)
 
-print(result)
+# print(result)
 
-def even(e):
-    if e % 2 ==0:
-        return("even numeber")
-    else:
-        return("not even num")
+# def even(e):
+#     if e % 2 ==0:
+#         return("even numeber")
+#     else:
+#         return("not even num")
     
-print(even(3))
+# print(even(3))
 
-f=5
+f=3
 for i in range(1,f+1):
    f=f*i
 print(f)
