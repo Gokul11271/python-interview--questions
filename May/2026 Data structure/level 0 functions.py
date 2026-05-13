@@ -54,10 +54,20 @@ calculate factorial  """
     
 # print(even(3))
 
-f=5
-a=1
-for i in range(1,f+1):
-    a*=i   
-print(a)
+# f=5
+# a=1
+# for i in range(1,f+1):
+#     a*=i   
+# print(a)
 
-   
+
+def fact(f):
+    a=1
+    for i in range(1,f+1):
+        a*=i
+    return(a)
+print(fact(3))
+print(fact(5))
+
+for i in range(1,11):
+    print(fact(i), end=" ")
