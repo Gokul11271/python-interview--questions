@@ -53,3 +53,9 @@ def even(e):
         return("not even num")
     
 print(even(3))
+
+
+def fact(f):
+    for i in range(f+1):
+        print(i*f)
+fact(3)
