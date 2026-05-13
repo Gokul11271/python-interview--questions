@@ -52,4 +52,4 @@ def even(e):
     else:
         return("not even num")
     
-even(2)
+print(even(2))
