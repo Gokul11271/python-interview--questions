@@ -54,8 +54,8 @@ def even(e):
     
 print(even(3))
 
-
-def fact(f):
-    for i in range(f+1):
-        print(i*f)
-fact(3)
+f=5
+for i in range(1,f+1):
+   f=f*i
+print(f)
+   
