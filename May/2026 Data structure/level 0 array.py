@@ -35,14 +35,26 @@ second largest
 # print(greater)
 
 
-arr = [4, 7, 1, 9, 2000,70 ,30,203,44]
-gt=arr[0]
-for i in range(len(arr)):
-    for j in range(i+1,len(arr)):
-        if arr[i] > arr[j] :
+# arr = [4, 7, 1, 9, 2000,70 ,30,203,44]
+# gt=arr[0]
+# for i in range(len(arr)):
+#     for j in range(i+1,len(arr)):
+#         if arr[i] > arr[j] :
           
-            gt=arr[i]
+#             gt=arr[i]
+# print(gt)
+
+
+
+a=[1,2,4,5]
+gt=a[0]
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i] > a[j]:
+            gt=a[j]
+            print(a[i])
 print(gt)
+            
 
 
 
