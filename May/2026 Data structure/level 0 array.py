@@ -35,5 +35,15 @@ second largest
 # print(greater)
 
 
+arr = [4, 7, 1, 9, 2000,70 ,30,203,44]
+gt=arr[0]
+for i in range(len(arr)):
+    for j in range(i+1,len(arr)):
+        if arr[i] > arr[j] :
+          
+            gt=arr[i]
+print(gt)
+
+
 
 
