@@ -46,15 +46,25 @@ second largest
 
 
 
-a=[1,2,4,5]
-gt=a[0]
+# a=[1,2,4,500,90,987.78,89]
+# gt=a[0]
+# for i in range(len(a)):
+#     for j in range(i+1,len(a)):
+#         if a[i] < a[j]:
+#             gt=a[j]
+#             print(a[i])
+# print(gt)
+            
+
+
+a=[1,2,3,4,6,50000000000,90,890]
+b=[]
 for i in range(len(a)):
     for j in range(i+1,len(a)):
-        if a[i] > a[j]:
-            gt=a[j]
-            print(a[i])
-print(gt)
-            
+        if a[i] > a[j] :
+            b.insert(0,a[i])
+            break
+print(b)
 
 
 
