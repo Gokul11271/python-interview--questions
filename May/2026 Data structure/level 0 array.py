@@ -84,5 +84,10 @@ second largest
 #    sum +=a[i]
 # print(sum)
 
-
-
+a=[10,20,304,49,48]
+b=[]
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i] >a[j] :
+            b.insert(0,a[i])
+print(b)
