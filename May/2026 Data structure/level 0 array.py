@@ -57,14 +57,25 @@ second largest
             
 
 
+# a=[1,2,3,4,6,50000000000,90,890]
+# b=[]
+# for i in range(len(a)):
+#     for j in range(i+1,len(a)):
+#         if a[i] > a[j] :
+#             b.insert(0,a[i])
+#             break
+# print(b)
+
+
 a=[1,2,3,4,6,50000000000,90,890]
 b=[]
 for i in range(len(a)):
     for j in range(i+1,len(a)):
-        if a[i] > a[j] :
+        if a[i] < a[j] :
             b.insert(0,a[i])
             break
-print(b)
+print(b[::-1])
+print(b[-1])
 
 
 
