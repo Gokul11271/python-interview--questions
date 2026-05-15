@@ -67,16 +67,22 @@ second largest
 # print(b)
 
 
-a=[1,2,3,4,6,50000000000,90,890]
-b=[]
-for i in range(len(a)):
-    for j in range(i+1,len(a)):
-        if a[i] < a[j] :
-            b.insert(0,a[i])
-            break
-print(b[::-1])
-print(b[-1])
+# a=[1,2,3,4,6,50000000000,90,890]
+# b=[]
+# for i in range(len(a)):
+#     for j in range(i+1,len(a)):
+#         if a[i] < a[j] :
+#             b.insert(0,a[i])
+#             break
+# print(b[::-1])
+# print(b[-1])
 
+
+# a=[10,20,30,40,50]
+# sum=0
+# for i in range(len(a)):
+#    sum +=a[i]
+# print(sum)
 
 
 
