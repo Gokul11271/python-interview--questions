@@ -16,9 +16,16 @@
 
 
 a,b,c=4,9,2
-largest = a
-if b> largest:
-    largest=b
-if c> largest:
-    largest=c
-print(largest)
+# largest = a
+# if b> largest:
+#     largest=b
+# if c> largest:
+#     largest=c
+# print(largest)
+
+if a>b and a>c:
+    print(a)
+elif b>c:
+    print(b)
+else:
+    print(c)
