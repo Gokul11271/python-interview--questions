@@ -1,9 +1,24 @@
-name = input()
-print("hello",name)
+# name = input()
+# print("hello",name)
 
-a,b=10,20
-print(a+b)
+# a,b=10,20
+# print(a+b)
 
-length = 5
-breadth = 3
-print(length*breadth)
+# length = 5
+# breadth = 3
+# print(length*breadth)
+
+# num=7
+# if num %2==0:
+#     print("even")
+# else:
+#     print("odd")
+
+
+a,b,c=4,9,2
+largest = a
+if b> largest:
+    largest=b
+if c> largest:
+    largest=c
+print(largest)
