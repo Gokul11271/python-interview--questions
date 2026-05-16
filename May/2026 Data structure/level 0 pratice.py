@@ -23,9 +23,14 @@ a,b,c=4,9,2
 #     largest=c
 # print(largest)
 
-if a>b and a>c:
-    print(a)
-elif b>c:
-    print(b)
-else:
-    print(c)
+# if a>b and a>c:
+#     print(a)
+# elif b>c:
+#     print(b)
+# else:
+#     print(c)
+
+
+n=5
+for i in range(n,0,-1):
+    print(i)
