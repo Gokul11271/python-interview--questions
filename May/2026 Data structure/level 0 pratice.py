@@ -51,4 +51,13 @@ a,b,c=4,9,2
 # print(a)
 
 
-a=12345
+a=54321
+
+for i in range(len(str(a))):
+    digit=a%10
+    # print(digit)
+    a=a//10
+    print(a,"value")
+   
+    # print(a)
+# print("*",digit)
