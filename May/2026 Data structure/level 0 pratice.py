@@ -49,3 +49,6 @@ a,b,c=4,9,2
 # for i in range(1,n+1):
 #     a *= i
 # print(a)
+
+
+a=12345
