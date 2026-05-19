@@ -51,15 +51,15 @@ a,b,c=4,9,2
 # print(a)
 
 
-# a=54321
+a=54321
 
-# for i in range(len(str(a))):
-#     digit=a%10
-#     # print(digit)
-#     a=a//10
-#     print(a,"value")
+for i in range(len(str(a))):
+    digit=a%10
+    # print(digit)
+    a=a//10
+    print(a,"value")
    
-#     # print(a)
+    # print(a)
 # # print("*",digit)
 
 
@@ -75,13 +75,19 @@ a,b,c=4,9,2
 #  print("no")
 
 
-a=121
-rev=str(a)[::-1]
-print(a,rev)
-if str(a) == rev :
-    print("it is a palindrom")
-else:
-    print("it is not ")
+# a=121
+# rev=str(a)[::-1]
+# print(a,rev)
+# if str(a) == rev :
+#     print("it is a palindrom")
+# else:
+#     print("it is not ")
+
+
+
+# am=153
+# for i in range(len(str(am))):
+#     print(i)
 
 
 
