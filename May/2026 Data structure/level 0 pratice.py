@@ -51,13 +51,13 @@ a,b,c=4,9,2
 # print(a)
 
 
-a=54321
+# a=54321
 
-for i in range(len(str(a))):
-    digit=a%10
-    # print(digit)
-    a=a//10
-    print(a,"value")
+# for i in range(len(str(a))):
+#     digit=a%10
+#     print(digit)
+#     a=a//10
+    # print(a,"value")
    
     # print(a)
 # # print("*",digit)
@@ -85,9 +85,15 @@ for i in range(len(str(a))):
 
 
 
-# am=153
-# for i in range(len(str(am))):
-#     print(i)
+am=153
+amstrong=0
+for i in range(len(str(am))):
+    digit=am%10
+    amstrong+=digit**3
+    am=am//10
+print(f"amstrong number is {amstrong}")
+
+
 
 
 
