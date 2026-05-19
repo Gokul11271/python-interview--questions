@@ -85,14 +85,21 @@ a,b,c=4,9,2
 
 
 
-am=153
-amstrong=0
-for i in range(len(str(am))):
-    digit=am%10
-    amstrong+=digit**3
-    am=am//10
-print(f"amstrong number is {amstrong}")
+# am=153
+# amstrong=0
+# for i in range(len(str(am))):
+#     digit=am%10
+#     amstrong+=digit**3
+#     am=am//10
+# print(f"amstrong number is {amstrong}")
 
+
+sum=123
+digit=0
+for i in range(len(str(sum))):
+    digit+=sum%10
+    sum=sum//10
+print(digit)
 
 
 
