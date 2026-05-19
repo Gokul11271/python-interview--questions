@@ -94,12 +94,12 @@ a,b,c=4,9,2
 # print(f"amstrong number is {amstrong}")
 
 
-sum=123
-digit=0
-for i in range(len(str(sum))):
-    digit+=sum%10
-    sum=sum//10
-print(digit)
+# sum=123
+# digit=0
+# for i in range(len(str(sum))):
+#     digit+=sum%10
+#     sum=sum//10
+# print(digit)
 
 
 
