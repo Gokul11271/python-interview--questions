@@ -51,13 +51,38 @@ a,b,c=4,9,2
 # print(a)
 
 
-a=54321
+# a=54321
 
-for i in range(len(str(a))):
-    digit=a%10
-    # print(digit)
-    a=a//10
-    print(a,"value")
+# for i in range(len(str(a))):
+#     digit=a%10
+#     # print(digit)
+#     a=a//10
+#     print(a,"value")
    
-    # print(a)
-# print("*",digit)
+#     # print(a)
+# # print("*",digit)
+
+
+# p=121
+# for i in range(len(str(p))):
+#     rev=p%10
+#     print(rev)
+#     p=p//10
+
+# if rev == p:
+#     print("it is a palindrom")
+# else:
+#  print("no")
+
+
+a=121
+rev=str(a)[::-1]
+print(a,rev)
+if str(a) == rev :
+    print("it is a palindrom")
+else:
+    print("it is not ")
+
+
+
+ 
