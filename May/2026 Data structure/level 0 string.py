@@ -9,9 +9,9 @@
 # print(ip[::-1])
 
 
-ip="mam"
-op=(ip[::-1])
-if ip == op:
-    print("it is palin")
-else:
-    print("not")
+# ip="mam"
+# op=(ip[::-1])
+# if ip == op:
+#     print("it is palin")
+# else:
+#     print("not")
