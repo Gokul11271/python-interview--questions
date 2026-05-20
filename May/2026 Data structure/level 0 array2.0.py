@@ -19,9 +19,34 @@ Input:
 
 [4,8,2,9] """
 
-ip=[4,8,2,9,]
-for i in range(len(ip)):
-    for j in range(len(ip)):
-        if ip[i]>ip[j]:
-             largest=ip[i]
-print(largest)
+# ip=[4,8,2,9,]
+# for i in range(len(ip)):
+#     for j in range(len(ip)):
+#         if ip[i]>ip[j]:
+#              largest=ip[i]
+# print(largest)
+
+# ip=[4,8,2,9]
+# for i in range(len(ip)):
+#     for j in range(len(ip)):
+#         if ip[i]<ip[j]:
+#              small=ip[i]
+# print(small)
+
+
+"""Problem 27 — Reverse Array
+
+Input:
+
+[1,2,3]
+
+Output:
+
+[3,2,1]
+
+"""
+
+# ip=[1,2,3]
+# for i in range(len(ip)-1,-1,-1):
+#     print(ip[i])
+# """Reversed"""
