@@ -37,10 +37,8 @@ matrix 4 x 4 i= 4 j =4
 
 ip=5
 for i in range(ip):
-    
-    print( )
-    
-    for j in range(i+1):
-     
-     
-     print("*",end="")
+   print()
+   for s in range(ip-i):
+      print(" ",end="")
+   for j in range(i+1):
+          print("*",end=" ")
