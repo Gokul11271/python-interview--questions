@@ -11,8 +11,18 @@ ip=5
 #     if answer==0:
 #         continue
 #     print(answer)
-f=0
-for i in range(ip):
-     f+=f+1
-     
-print(f)
+
+ip=5
+current=0
+previous=0
+for i in range(5):
+    if i==0 or i==1:
+        print(i) 
+        previous =i
+        if i ==1:
+         print(previous)
+previous+=current+previous
+current=previous
+
+print(previous)
+print("current",current)
