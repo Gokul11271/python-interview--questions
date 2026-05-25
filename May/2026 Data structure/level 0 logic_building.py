@@ -46,4 +46,6 @@ for i in range(ip):
         n=i
         print(i)
     elif i > 1:
+        sum=c+n
+        print(sum)
          
