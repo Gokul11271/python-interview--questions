@@ -14,4 +14,5 @@ ip=5
 f=0
 for i in range(ip):
      f+=f+1
-     print(f)
+     
+print(f)
