@@ -39,13 +39,37 @@ ip=5
 # | 5 | 3 | 5 | 8 | 3 |
 # | 6 | 5 | 8 | 13 | 5 |
 # | 7 | 8 | 13 | 21 | 8 |
-ip=5
-c,n=0,0
-for i in range(ip):
-    if i == 0 or i ==1:
-        n=i
-        print(i)
-    elif i > 1:
-        sum=c+n
-        print(sum)
-         
+# ip=5
+# c=0
+# n=0
+# s=1
+# for i in range(ip):
+#     if i ==0 or i==1:
+#         n=i
+#         print(i)
+#     elif i > 1:
+#         c=n
+#         print("iteration",i,"current = ",c)
+#         n=s
+#         print("iteration",i,"new = ",n)
+#         s=c+n
+#         print("Total",s)
+
+
+# ip = 5
+# a, b = 0, 1
+# for i in range(ip):
+#     print(a)
+#     a, b = b, a + b
+
+
+
+
+
+ip=10
+for i in range (2,ip):
+   for j in range(1,ip):
+      if i %j==0:
+         print(i,"pr")
+      else :
+         print("not pr")
