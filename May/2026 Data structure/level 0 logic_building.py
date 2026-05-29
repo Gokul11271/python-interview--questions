@@ -65,11 +65,13 @@ ip=5
 
 
 
+"""  so prime number can a like can only did by same and 1 only it should not divid by any other number except 1 and itself"""
 
-ip=10
-for i in range (2,ip):
-   for j in range(1,ip):
-      if i %j==0:
-         print(i,"pr")
-      else :
-         print("not pr")
+""" example 2 → Divisible only by 1 and 2 → ✅ Prime
+
+3 → Divisible only by 1 and 3 → ✅ Prime
+
+4 → Divisible by 1, 2, and 4 → ❌ Not prime (because it has more than two factors)
+
+5 → Divisible only by 1 and 5 → ✅ Prime"""
+
