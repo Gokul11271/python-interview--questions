@@ -75,3 +75,6 @@ ip=5
 
 5 → Divisible only by 1 and 5 → ✅ Prime"""
 
+print("helo")
+a=10
+b=20

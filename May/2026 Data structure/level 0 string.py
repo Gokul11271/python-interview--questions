@@ -9,9 +9,13 @@
 # print(ip[::-1])
 
 
-# ip="mam"
+# ip="mamm"
 # op=(ip[::-1])
 # if ip == op:
 #     print("it is palin")
 # else:
 #     print("not")
+
+print("eee")
+
+
