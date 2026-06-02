@@ -2,7 +2,7 @@
 
 
 "Fibonacci Series"
-ip=5
+# ip=5
 "op = 0 1 1 2 3"
 # answer=0
 # print(answer)
@@ -75,6 +75,19 @@ ip=5
 
 5 → Divisible only by 1 and 5 → ✅ Prime"""
 
-print("helo")
-a=10
-b=20
+# prime=10
+# for i in range(2,prime):
+#     if i ==2:
+#         print("it is a prime",i)
+#     elif i ** 0.5 < 2:
+#         print("it is a prime number",    i)
+#     else:
+#         print("it is not prime")
+
+print(3 **0.5)
+print(4 **0.5)
+print(5 **0.5)
+print(6 **0.5)
+print(7 **0.5)
+print(8 **0.5)
+print(9 **0.5)
