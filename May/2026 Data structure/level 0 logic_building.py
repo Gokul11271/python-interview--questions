@@ -84,10 +84,13 @@
 #     else:
 #         print("it is not prime")
 
-print(3 **0.5)
-print(4 **0.5)
-print(5 **0.5)
-print(6 **0.5)
-print(7 **0.5)
-print(8 **0.5)
-print(9 **0.5)
+# print("3",3 **0.5)
+# print("4",4 **0.5)
+# print("5",5 **0.5)
+# print("6",6 **0.5)
+# print("7",7 **0.5)
+# print("8",8 **0.5)
+# print("9",9 **0.5)
+
+a=4**0.5
+print(4/a)
