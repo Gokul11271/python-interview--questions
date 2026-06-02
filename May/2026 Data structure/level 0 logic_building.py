@@ -92,5 +92,19 @@
 # print("8",8 **0.5)
 # print("9",9 **0.5)
 
-a=4**0.5
-print(4/a)
+# a=7**0.5
+# print(7%a)
+
+
+# print(3%2)
+# print(4%2)
+# print(5%2)
+# print(6%2)
+# print(11%2)
+# print(7%2)
+
+
+
+n=7
+# for i in range(7,0,-1):
+print()
