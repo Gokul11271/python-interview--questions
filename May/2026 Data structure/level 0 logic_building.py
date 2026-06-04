@@ -105,6 +105,40 @@
 
 
 
-n=7
+# n=7
 # for i in range(7,0,-1):
-print()
+#     if i != n or i != 1:
+#          pass
+#     elif n % i ==0:
+#             print(" it is not a prime",i)
+#             continue
+
+#     elif i==n or i == 1:
+#         if n % i ==0 :
+#             print(" it is a prime")
+
+
+
+n=7
+count=0
+for i in range(1,n+1):
+    if (n % i ==0):
+        count+=1
+        print(i)
+        # print(count)
+if count==2:
+        print("it is a prime number")
+else:
+        print("not a prime number")
+
+
+
+ip = 10
+for i in range(ip):
+      for j in range(ip):
+            if i%j==0 :
+                  count +=1
+if count==2:
+      print("it is prime number")
+else:
+      print("not a prime number")
