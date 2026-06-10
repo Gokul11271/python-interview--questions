@@ -119,26 +119,65 @@
 
 
 
-n=7
-count=0
-for i in range(1,n+1):
-    if (n % i ==0):
-        count+=1
-        print(i)
-        # print(count)
-if count==2:
-        print("it is a prime number")
-else:
-        print("not a prime number")
+# n=7
+# count=0
+# for i in range(1,n+1):
+#     if (n % i ==0):
+#         count+=1
+#         print(i)
+#         # print(count)
+# if count==2:
+#         print("it is a prime number")
+# else:
+#         print("not a prime number")
 
 
 
-ip = 10
-for i in range(ip):
-      for j in range(ip):
-            if i%j==0 :
-                  count +=1
-if count==2:
-      print("it is prime number")
-else:
-      print("not a prime number")
+# ip = 10
+# count=0
+# for i in range(1,ip+1):
+#        if count==2:
+#             print("it is a prime number",i)
+#        for j in range(1,ip+1):
+#             if i%j==0 :
+#                   count +=1
+
+
+"""Problem 33 — Count Prime Numbers in Range
+
+Input:
+
+1 to 10
+
+Output:
+
+2 3 5 7
+
+"""
+# n=5
+# count=0
+# for i in range(1,n+1):
+#     if n % i ==0 :
+#         print(i)
+#         count+=1
+# if count==2:
+#     print("i")
+# else:
+#     print("n")
+        
+
+# n=10
+
+# for i in range(2,n+1):
+#     count=0
+#     for j in range(1,i+1):
+       
+#        if i % j ==0:
+#           count+=1
+          
+#     if count==2:
+#        print(i)
+         
+
+"section 9 search"
+     
